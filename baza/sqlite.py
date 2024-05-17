@@ -31,8 +31,8 @@ class Database:
         sql = """
         CREATE TABLE IF NOT EXISTS USERS(
         full_name TEXT,
-        telegram_id NUMBER unique );
-              """
+        telegram_id INTEGER unique
+        ); """
         self.execute(sql, commit=True)
 
     @staticmethod
@@ -41,22 +41,6 @@ class Database:
             f"{item} = ?" for item in parameters
         ])
         return sql, tuple(parameters.values())
-
-
-    def add_user(self, telegram_id:int, full_name:str):
-
-        sql = """
-        INSERT INTO Users(telegram_id, full_name) VALUES(?, ?);
-        """
-        self.execute(sql, parameters=(telegram_id, full_name), commit=True)
-
-
-    def select_all_users(self):
-        sql = """
-        SELECT * FROM Users;
-        """
-        return self.execute(sql, fetchall=True)
-
 
     def select_user(self, **kwargs):
         sql = "SELECT * FROM Users WHERE;"

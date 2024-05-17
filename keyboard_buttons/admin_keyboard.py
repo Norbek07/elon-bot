@@ -1,14 +1,10 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton 
 
-
-admin_button = ReplyKeyboardMarkup(
+ads_button = ReplyKeyboardMarkup(
     keyboard=[
-        [
-            KeyboardButton(text="Foydalanuvchilar soni"),
-            KeyboardButton(text="Reklama yuborish"),
-        ]
-        
+        [KeyboardButton(text="🛎 E'lon berish")],
+        [KeyboardButton(text="💁🏻‍♂️ Biz haqimizda"),KeyboardButton(text="📣 Kanal")]    
     ],
    resize_keyboard=True,
-   input_field_placeholder="Menudan birini tanlang"
+   input_field_placeholder="E'lon berish uchun bosing"
 )
